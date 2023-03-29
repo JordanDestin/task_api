@@ -21,10 +21,10 @@ class TaskController extends Controller
      */
     public function index(Theme $theme): JsonResponse
     {
-        $tasks = Task::where('theme_id', $theme->id)->where('status_id', 1)->get();
-        $tasksInProgress = Task::where('theme_id', $theme->id)->where('status_id', 2)->get();
-        $tasksPending = Task::where('theme_id', $theme->id)->where('status_id', 3)->get();
-        $tasksResolved = Task::where('theme_id', $theme->id)->where('status_id', 4)->get();
+        $tasks = Task::where('theme_id', $theme->id)->where('statutes_id', 1)->get();
+        $tasksInProgress = Task::where('theme_id', $theme->id)->where('statutes_id', 2)->get();
+        $tasksPending = Task::where('theme_id', $theme->id)->where('statutes_id', 3)->get();
+        $tasksResolved = Task::where('theme_id', $theme->id)->where('statutes_id', 4)->get();
       
         return response()->json([
             "listTask" =>$tasks,
@@ -83,7 +83,7 @@ class TaskController extends Controller
         $updateStatusTask = DB::table('tasks')
         ->where('id', $task->id)
         ->where('theme_id', $theme->id)
-        ->update(['status_id'=>$request->idStatus]);
+        ->update(['statutes_id'=>$request->idStatus]);
 
         return response()->json(200);
     }
