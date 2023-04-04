@@ -51,7 +51,7 @@ Route::group(['middleware' =>['auth:sanctum']], function(){
     Route::get('task/{id}/comment',[CommentController::class,'index']);
 
     Route::get('role',[RoleController::class,'index']);
-    //Route::get('status',[StatutesController::class, 'index']);
+   // Route::get('status',[StatutesController::class, 'index']);
     Route::get('status',StatutesController::class);
    
 });
