@@ -79,7 +79,6 @@ class TaskController extends Controller
 
     public function updateStatusTask(Request $request, Theme $theme, Task $task)
     {
-       
         $updateStatusTask = DB::table('tasks')
         ->where('id', $task->id)
         ->where('theme_id', $theme->id)
