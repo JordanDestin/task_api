@@ -35,7 +35,6 @@ class SubTaskController extends Controller
      */
     public function store(StoreSubtaskRequest $request, Theme $theme, Task $task)
     {
-        dd('qsdqsd');
         $data = $request->validated();
         $data['task_id'] = $task->id;
 
